@@ -116,11 +116,20 @@ function mcmc_pi(dom_el, r) {
         return circle[0][0];
     }
 
-    var updating;
+    var updating;       // id of updating process
 
     return {
-        start: function() { updating = setInterval(update, 10); },
-        stop: function() { clearInterval(updating); },
+        start: function() {
+                   if (!updating) {
+                       // only start updating if not currently updating
+                       updating = setInterval(update, 10);
+                   }
+               },
+        stop: function() {
+                  clearInterval(updating);
+                  // 0 means no longer updating
+                  updating = 0;
+              },
         reset: function() {
             // remove all circles
             svg.selectAll('.' + point_class).remove();
