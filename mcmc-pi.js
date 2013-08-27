@@ -127,7 +127,7 @@ function mcmc_pi(dom_el, r) {
                },
         stop: function() {
                   clearInterval(updating);
-                  // 0 means no longer updating
+                  // 0 means no longer updating, it's the falsy number
                   updating = 0;
               },
         reset: function() {

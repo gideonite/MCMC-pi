@@ -1,2 +1,3 @@
-This is a little Markov Chain Monte-Carlo simulation that estimates pi.  It's a
-little project that I submitted for www.hackerschool.com
+Here's a little Markov Chain Monte-Carlo simulation that estimates the value of
+pi.  To run, just fire up your favorite light-weight web server, I like `python
+-m SimpelHTTPSever` in `.`.
