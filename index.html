@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>MCMC pi</title>
+<!--
+<link rel="stylesheet" type="text/css" href="FIXME" />
+<script type="text/javascript" src="FIXME"></script>
+<style type="text/css">
+/* <![CDATA[ */
+/* ]]> */
+</style>
+-->
+</head>
+<body>
+    <div id="main"></div>
+</body>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="mcmc-pi.js"></script>
+
+<script type="text/javascript">
+    var main = document.getElementById('main');
+    var simulation = mcmc_pi(main, 100);
+</script>
+
+</html>
