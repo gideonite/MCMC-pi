@@ -5,8 +5,8 @@
 // *signature:* `dom el, number -> {function start, function stop, function reset}`
 function mcmc_pi(dom_el, r) {
     var margin = {
-        top: 50,
-        left: 50
+        top: 5,
+        left: 5
     };
 
     var container = d3.select(dom_el);
@@ -42,7 +42,7 @@ function mcmc_pi(dom_el, r) {
         .attr('stroke', 'black')
         ;
 
-    var pi_num_container = container.append('p');
+    var pi_num_container = container.append('h2');
 
     var scale = d3.scale.linear()
         .domain([0,1])          // random numbers between 0 and 1
@@ -96,12 +96,14 @@ function mcmc_pi(dom_el, r) {
         }
     }
 
+    var point_class = 'point';
     // appends a circle to the `svg` element globally defined with a center at
     // the coordinates (x,y)
     //
     // *signature:* `number, number -> dom el`
     function append_circle(x, y) {
         var circle = svg.append('circle')
+            .attr('class', point_class)
             .attr('r', 0)
             .attr('cx', x)
             .attr('cy', y)
@@ -121,7 +123,7 @@ function mcmc_pi(dom_el, r) {
         stop: function() { clearInterval(updating); },
         reset: function() {
             // remove all circles
-            svg.selectAll('circle').remove();
+            svg.selectAll('.' + point_class).remove();
 
             // reset pi state
             pi = { in_circle: 0, total: 0};

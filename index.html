@@ -10,16 +10,46 @@
 /* ]]> */
 </style>
 -->
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div id="main"></div>
+    <div class="container">
+        <h1>Markov Chain Monte-Carlo (MCMC) Estimation of &pi;</h1>
+        <p class="lead">
+            The idea is to estimate &pi; by throwing random dots at a circle
+            and a square in order to estimate their respective areas.  Then
+            you can use the following ratio to estimate &pi;.  The better your
+            estimation of the area, the better your estimate becomes.<br />
+
+            <blockquote>
+            area of circle / area of square<br />
+            = &pi; r^2 / (2r)^2<br />
+            = &pi; / 4<br />
+            </blockquote>
+        </p>
+
+        <table><!--tables are no good, but at least it works-->
+            <tr>
+                <td><div id="main"></div></td>
+                <td style="padding-left: 50px; padding-bottom:590px;">
+                    <button class="btn btn-success" type="button" onclick="simulation.start();">Start</button>
+                    <button class="btn btn-danger" type="button" onclick="simulation.stop();">Stop</button>
+                    <button class="btn btn-info" type="button" onclick="simulation.reset();">Reset</button>
+                </td>
+            </tr>
+        </table>
+
+    </div>
 </body>
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
 <script type="text/javascript" src="mcmc-pi.js"></script>
 
 <script type="text/javascript">
     var main = document.getElementById('main');
-    var simulation = mcmc_pi(main, 100);
+    var simulation = mcmc_pi(main, 300);
 </script>
 
 </html>
