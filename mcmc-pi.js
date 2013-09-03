@@ -43,6 +43,7 @@ function mcmc_pi(dom_el, r) {
         ;
 
     var pi_num_container = container.append('h2');
+    pi_num_container.style('font-size', '45px');
 
     var scale = d3.scale.linear()
         .domain([0,1])          // random numbers between 0 and 1
